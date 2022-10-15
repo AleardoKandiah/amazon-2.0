@@ -7,7 +7,9 @@ import {
 import { signIn, signOut, useSession } from "next-auth/react";
 
 function Header() {
-  return (
+    const {session} = useSession();
+
+    return (
     <header>
         {/* header contains two containers  */}
     
@@ -35,7 +37,7 @@ function Header() {
 
                 {/* Account div */}
                 <div onClick={signIn} className=" link">
-                    <p>Hello Aleardo</p>
+                    <p> {session ? `Hello, ${session.user.name}` : "Sign In"}</p>
                     <p className="font-extrabold md:text-sm">Account & Lists</p>
                 </div>
 
