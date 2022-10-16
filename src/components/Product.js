@@ -20,7 +20,7 @@ function Product({ id, title, price, description, category, image }) {
       <Image src={image} height={200} width={200} objectFit="contain"/>
 
       <h4 className='my-3'>{title}</h4>
-      
+      {/* randomly assign ratings  */}
         <div className='flex'>
             {Array(rating)
             .fill()
