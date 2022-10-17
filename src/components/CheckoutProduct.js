@@ -28,7 +28,19 @@ function CheckoutProduct({
             </div>
 
             <p className="text-xs my-2 line-clamp-3">{description}</p>
-            <Currency/>
+            <Currency quantity={price} currency="GBP"/>
+
+            {hasPrime && (
+                <div className="flex items-center space-x-2">
+                    <img
+                    loading="lazy"
+                    className="w-12"
+                    src="https://links.papareact.com/fdw"
+                    alt=""
+                    />
+                    <p>FREE Next-day Delivery</p>
+                </div>
+            )}
         </div>
 
     </div>
