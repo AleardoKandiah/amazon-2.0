@@ -48,7 +48,7 @@ function Checkout() {
           </div>
 
           {/* Right */}
-          <div>
+          <div className="flex flex-col bg-white p-10 shadow-md">
             {items.length > 0 && (
               <>
                 <h2 className="whitespace-nowrap">
@@ -57,7 +57,9 @@ function Checkout() {
 
                     </span>
                 </h2>
-                <button className={`button mt-2 ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'}`}>
+                <button 
+                disabled={!session}
+                className={`button mt-2 ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'}`}>
                   {!session ? "Sign in to checkout" : "Proceed to checkout}"}
                 </button>
               </>
