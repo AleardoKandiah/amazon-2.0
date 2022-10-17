@@ -1,4 +1,5 @@
 import Header from "../components/Header"
+import CheckoutProduct from "../components/CheckoutProduct"
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectItems } from "../slices/basketSlice";
@@ -25,6 +26,19 @@ function Checkout() {
                 {items.length === 0 ? 'Your Amazon Basket is Empty'
                 : 'Shopping Basket'}
               </h1>
+                {/* Render the product item in checkout page */}
+                {items.map((item, i ) => {
+                    <CheckoutProduct
+                      key={i}
+                      id={item.id}
+                      title={item.title}
+                      price={item.price}
+                      description={item.description}
+                      category={item.category}
+                      image={item.image}
+                      hasPrime={item.hasPrime}
+                    />
+                })}
             </div>
 
           </div>
