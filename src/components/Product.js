@@ -27,7 +27,7 @@ function Product({ id, title, price, description, category, image }) {
       image,
     };
 
-    // send the product as an action to the redux store
+    // send the product as an action to the redux store (the basket slice)
     dispatch(addToBasket(product));
   }
 
@@ -61,7 +61,7 @@ function Product({ id, title, price, description, category, image }) {
         )}
 
         <button className='mt-auto button'
-        onClick={addIteToBasket}>Add to Basket</button>
+        onClick={addItemToBasket}>Add to Basket</button>
     </div>
   )
 }
