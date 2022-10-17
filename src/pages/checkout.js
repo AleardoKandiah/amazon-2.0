@@ -27,18 +27,19 @@ function Checkout() {
                 : 'Shopping Basket'}
               </h1>
                 {/* Render the product item in checkout page */}
-                {items.map((item, i ) => {
+                {items.map((item, i ) => (
                     <CheckoutProduct
                       key={i}
                       id={item.id}
                       title={item.title}
+                      rating={item.rating}
                       price={item.price}
                       description={item.description}
                       category={item.category}
                       image={item.image}
                       hasPrime={item.hasPrime}
                     />
-                })}
+                ))}
             </div>
 
           </div>
