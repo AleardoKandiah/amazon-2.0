@@ -18,7 +18,17 @@ function Product({ id, title, price, description, category, image }) {
   const [hasPrime] = useState(Math.random() < 0.5);
   
   const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+    };
 
+    // send the product as an action to the redux store
+    dispatch(addToBasket(product));
   }
 
     return (
