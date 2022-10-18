@@ -15,5 +15,13 @@ export default async (req, res) => {
                 images: [item.image]
             },
         }
-    }))
+    }));
+
+    const session = await stripe.checkout.session.create({
+        payment_method_types: ["card"],
+        line_items: trasnformedItems,
+        mode: 'payment',
+        success_url: `${process.env.HOST}/success`,
+        cancel_url: `${process.env.HOST}/cancel`
+    })
 };
