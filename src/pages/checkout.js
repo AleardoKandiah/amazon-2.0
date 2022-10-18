@@ -53,7 +53,7 @@ function Checkout() {
             {items.length > 0 && (
               <>
                 <h2 className="whitespace-nowrap">
-                    Subtotal ({items.length} items):
+                    Subtotal ({items.length} items):{" "}
                     <span className="font-bold">
                       <Currency quantity={total} currency="GBP"/>
                     </span>
@@ -61,7 +61,7 @@ function Checkout() {
                 <button 
                 disabled={!session}
                 className={`button mt-2 ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'}`}>
-                  {!session ? "Sign in to checkout" : "Proceed to checkout}"}
+                  {!session ? "Sign in to checkout" : "Proceed to checkout"}
                 </button>
               </>
             )}
