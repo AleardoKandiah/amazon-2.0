@@ -17,8 +17,9 @@ export default async (req, res) => {
         },
     }));
 
+    // comment
     const session = await stripe.checkout.sessions.create({
-        payment_method_type: "card",
+        payment_method_type: ["card"],
         shipping_rates: ['shr_1LuE6nFVJRVkRPICbhJANI9w'],
         shipping_address_collection: {
             allowed_countries: ['GB','US', 'CA'], 
@@ -35,3 +36,7 @@ export default async (req, res) => {
 
     res.status(200).json({ id: session.id });
 };
+
+
+// success_url: `${process.env.HOST}/success`,
+// cancel_url: `${process.env.HOST}/cancel`,
