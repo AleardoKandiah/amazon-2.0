@@ -20,7 +20,7 @@ const endpointSecret = process.env.STRIPE_SIGNIN_SECRET;
 const fulfillOrder = async (session) =>{
     console.log('fulfillinf order', session)
 
-    return.app
+    return app
     .firstore()
     .collection('users')
     .doc(session.metadata.email)
