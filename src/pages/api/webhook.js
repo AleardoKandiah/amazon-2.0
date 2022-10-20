@@ -1,5 +1,8 @@
+import { buffer } from "micro";
+// import = as admin from "firebase-admin";
 
 
+// secure connection to firebase
 
 
 // establish a connection to stripe
