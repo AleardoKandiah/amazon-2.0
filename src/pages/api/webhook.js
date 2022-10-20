@@ -1,9 +1,16 @@
+import { isAdmin } from "@firebase/util";
 import { buffer } from "micro";
 // import = as admin from "firebase-admin";
 
 
 // secure connection to firebase
-
+const serviceAccount = require("../../../permission.json");
+const app = !isAdmin.apps.length 
+    ? isAdmin.initializeApp({
+        credentials: admin.credentials.cert(serviceAccount),
+    })
+    :
+    isAdmin.apply();
 
 // establish a connection to stripe
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
