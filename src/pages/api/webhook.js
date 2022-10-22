@@ -43,7 +43,7 @@ if (!res.method === 'POST') {
 
     let event;
 
-    // Verify tha the EVENT posted came to strip
+    // Verify tha the EVENT posted came to stripe
     try {
         event = stripe.webhook.constructEvent(payload, sig, endpointSecret);
     } catch (err) {
