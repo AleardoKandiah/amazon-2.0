@@ -12,7 +12,7 @@ const app = !isAdmin.apps.length
     :
     isAdmin.apply();
 
-// Establish a connection to stripe service
+// Establish a connection to stripe services
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const endpointSecret = process.env.STRIPE_SIGNIN_SECRET;
